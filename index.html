@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="bonaparte.js"></script>
+    </head>
+    <body>
+        <div id="loading-page" style="display: block;">
+            <p>Loading...</p>
+        </div>
+        <div id="actual-page" style="display: none;">
+            <span id="domain-selection">
+                <p>domain:</p>
+                <select id="domain-selector" onchange="domainChange()"></select>
+            </span>
+            <span id="name-selection" style="display: none;">
+                <p>name:</p>
+                <input type="text" id="name-selector">
+            </span>
+            <span id="theme-selection" style="display: none;">
+                <p>theme:</p>
+                <select id="theme-selector">
+                    <option value="random" selected>random</option>
+                </select>
+            </span>
+            <p>email:</p>
+            <input type="email" id="email" minlength="3">
+            <br>
+            <br>
+            <button onclick="submit()">submit</button>
+            <p id="message"></p>
+        </div>
+    </body>
+</html>
