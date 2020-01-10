@@ -1,33 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="bonaparte.js"></script>
-    </head>
-    <body>
-        <div id="loading-page" style="display: block;">
-            <p>Loading...</p>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="bonaparte.css">
+    <script src="vendors/materialize/js/materialize.min.js"></script>
+    <script src="initializer.js"></script>
+    <script src="bonaparte.js"></script>
+</head>
+
+<body>
+    <div class="container main-content">
+        <div class="row">
+            <div class="col s12">
+                <div class="preload-fullpage" id="loading-page" style="display: block;">
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="spinner-layer spinner-red">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="spinner-layer spinner-yellow">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="spinner-layer spinner-green">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div id="actual-page" style="display: none;">
+                    <span id="domain-selection">
+                        <div class="input-field">
+                            <select id="domain-selector" onchange="domainChange()"></select>
+                            <label>Domains: </label>
+                        </div>
+                    </span>
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="input-field" id="name-selection" style="display: none;">
+                                <input type="text" id="name-selector">
+                                <label for="name-selector">Name</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m6">
+                            <div class="input-field" id="theme-selection" style="display: none;">
+                                <select id="theme-selector">
+                                    <option value="random" selected>random</option>
+                                </select>
+                                <label>Theme</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="email" minlength="3">
+                        <label for="email">Email</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" onclick="submit()">Submit
+                        <i class="material-icons right">save</i>
+                    </button>
+                    <p style="display: none;" id="message"></p>
+                </div>
+            </div>
         </div>
-        <div id="actual-page" style="display: none;">
-            <span id="domain-selection">
-                <p>domain:</p>
-                <select id="domain-selector" onchange="domainChange()"></select>
-            </span>
-            <span id="name-selection" style="display: none;">
-                <p>name:</p>
-                <input type="text" id="name-selector">
-            </span>
-            <span id="theme-selection" style="display: none;">
-                <p>theme:</p>
-                <select id="theme-selector">
-                    <option value="random" selected>random</option>
-                </select>
-            </span>
-            <p>email:</p>
-            <input type="email" id="email" minlength="3">
-            <br>
-            <br>
-            <button onclick="submit()">submit</button>
-            <p id="message"></p>
-        </div>
-    </body>
+
+    </div>
+</body>
+
 </html>
