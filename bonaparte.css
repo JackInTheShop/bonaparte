@@ -27,3 +27,7 @@
 .center-align {
     justify-content: center;
 }
+
+.select-dropdown li img {
+    width: 80px !important;
+}

@@ -1,3 +1,8 @@
+function toTitleCase(str) {
+    // stolen from https://stackoverflow.com/a/4879879
+    return str.toLowerCase().replace(/(^| )(\w)/g, s => s.toUpperCase()) 
+}
+
 async function updateResouce(resourceUrl, resourceName) {
     var response = await fetch(resourceUrl);
     var responseData = await response.text();
@@ -88,7 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
             var opt = document.createElement("option");
             var val = window.themeData[i]["id"];
             opt.value = val;
-            opt.innerHTML = val;
+            opt.innerHTML = toTitleCase(val.replace("_", " "));
+            opt.setAttribute("data-icon", themeData[i]["backgroundImageLink"].split("=").slice(0, -1).join() + "=w80-h40-n"); // add background image, but make it properly sized
             themeSelector.appendChild(opt);
         }
         // Once that every options has been set, initialize select through materialize
