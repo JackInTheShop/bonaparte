@@ -1,6 +1,5 @@
-.main-content {
-    padding-top: 45px;
-    padding-bottom: 45px;
+.site-title {
+    padding-bottom: 25px;
 }
 
 .preload-fullpage {
@@ -10,5 +9,21 @@
     right: 0;
     bottom: 0;
     align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer i {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.center-align {
     justify-content: center;
 }
